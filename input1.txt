@@ -1,0 +1,7 @@
+(a) The physical dependencies that govern the order in which these transactions are implemented are:
+Create customer records: This must be done before invoices can be produced or amended, and before cash payments can be recorded.
+Produce invoice: This can be done once customer records are created, but must be done before monthly statements can be produced.
+Amend invoice: This can be done after invoices are produced, but before cash payments are recorded.
+Record cash payment: This can be done after invoices are produced and amended, but must be done before paid invoices are cleared from the database.
+Clear paid invoices from database: This can be done once cash payments are recorded, but must be done before customer records are deleted.
+Produce monthly statements: This can be done once invoices are produced and before the paid invoices are cleared from the database.

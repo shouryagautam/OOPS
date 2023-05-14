@@ -1,0 +1,11 @@
+(a) The physical dependencies that govern the order in which these transactions are implemented are:
+Create customer records: This must be done before invoices can be produced or amended, and before cash payments can be recorded.
+Produce invoice: This can be done once customer records are created, but must be done before monthly statements can be produced.
+Amend invoice: This can be done after invoices are produced, but before cash payments are recorded.
+Record cash payment: This can be done after invoices are produced and amended, but must be done before paid invoices are cleared from the database.
+Clear paid invoices from database: This can be done once cash payments are recorded, but must be done before customer records are deleted.
+Produce monthly statements: This can be done once invoices are produced and before the paid invoices are cleared from the database.
+Based on this analysis, pair programming may not be suitable in the following situations:
+Tight deadlines: If there is a tight deadline fora project, it may not be practical to use pair programming, as it can be slower than working alone.
+Inexperienced programmers: Pair programming requires a certain level of skill and experience, so it may not be suitable for less experienced programmers who need to focus on learning and developing their own skills.
+Independent work: If a task requires a high degree of independent work, such as research or analysis, it may not be suitable for pair programming.
